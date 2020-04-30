@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class AWSConfig {
+public class AwsConfig {
     @Value("${aws.accessKey}")
     private String awsAccessKey;
 
@@ -24,9 +24,8 @@ public class AWSConfig {
                 awsAccessKey,
                 awsSecretKey
         );
-        AmazonSQS sqs = AmazonSQSClientBuilder.standard()
+        return AmazonSQSClientBuilder.standard()
                 .withCredentials(new AWSStaticCredentialsProvider(credentials))
                 .withRegion(Regions.US_WEST_2).build();
-        return sqs;
     }
 }
