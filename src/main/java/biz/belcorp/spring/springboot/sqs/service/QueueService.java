@@ -10,5 +10,7 @@ public interface QueueService {
 
     boolean sendMessage(String message, String url, Map<String, String> attributes);
 
+    boolean sendMessage(Object object, String url);
+
     List<Message> getMessages(String url);
 }

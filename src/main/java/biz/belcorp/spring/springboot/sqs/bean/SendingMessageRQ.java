@@ -1,4 +1,4 @@
-package biz.belcorp.spring.springboot.sqs.model;
+package biz.belcorp.spring.springboot.sqs.bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,5 +11,5 @@ import lombok.Setter;
 @NoArgsConstructor
 public class SendingMessageRQ {
     private String message;
-    private String url;
+    private String queueUrl;
 }
